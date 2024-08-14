@@ -1,10 +1,18 @@
-let condicion = false;
-let producto= [];
+function agregarProductos() {
+  const inventario = [];
+  let producto = prompt("Ingresa un producto para inventariar");
+  inventario.push(producto);
+}
+
+function imprimirListado() {
+  for (const producto of inventario) {
+    console.log(producto);
+  }
+}
+
 do {
-    let respuesta = prompt('Querés ingresar un nuevo producto?')
-    if(respuesta.toLowerCase() === 'si'){
-        producto = prompt('Ingresa un producto para inventariar');
-    } else {
-        condicion = false;
-    }
-} while (condicion);
+  agregarProductos();
+  let respuesta = prompt("¿Desea agregar otro producto? (s/n)");
+} while (respuesta.toLowerCase() === "s");
+
+imprimirListado();
